@@ -108,12 +108,14 @@ def optff(k, requests):
     return pfs
 
 def main():
-    filename = "testfiles/test5.txt"
+    # change filename here to test different files
+    # "testfiles/<input_file_name_here>.txt"
+    filename = "testfiles/test4.txt"
 
     k, requests = read_file(filename)
-    print(f"FIFO: {fifo(k,requests)}")
-    print(f"LRU: {lru(k,requests)}")
-    print(f"OPTFF: {optff(k,requests)}")
+    print(f"FIFO    : {fifo(k,requests)}")
+    print(f"LRU     : {lru(k,requests)}")
+    print(f"OPTFF   : {optff(k,requests)}")
 
 
 
