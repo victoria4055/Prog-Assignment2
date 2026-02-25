@@ -110,7 +110,7 @@ def optff(k, requests):
 def main():
     # change filename here to test different files
     # "testfiles/<input_file_name_here>.txt"
-    filename = "testfiles/test7.txt"
+    filename = "testfiles/ex1.txt"
 
     k, requests = read_file(filename)
     print(f"FIFO    : {fifo(k,requests)}")
