@@ -43,13 +43,30 @@ def fifo(k, requests):
 
     return pfs
 
+def lru(k, requests):
+    frames = []
+    pfs = 0
 
+    for request in requests:
+        if request not in frames:
+            pfs += 1
+            if len(frames) < k:
+                frames.append(request)
+            else:
+                frames.pop(0)
+                frames.append(request)
+        else:
+            frames.remove(request)
+            frames.append(request)
+
+    return pfs
 
 def main():
     filename = "ProgAssignment2/testfiles/ex3.txt"
 
     k, requests = read_file(filename)
     print(f"FIFO: {fifo(k,requests)}")
+    print(f"LRU: {lru(k,requests)}")
 
 
 
