@@ -9,6 +9,10 @@ Programming Assignment 2 for COP4533 - Algorithms Abstraction and Designs
 - Clone the repository into your desired Python supported IDE.
 - No external dependencies
 
+## Running the Program
+- Run main.py and modify the filename variable inside main() to reference the input files that are inside the testfiles/ file.
+- For each test(1-7).txt file in the testfiles/, there is a corresponding file test(1-7).out with the expected output in the tests/ folder. The output that is printed after running the program should match the contents of the corresponding .out file.
+
 ## Assumptions:
 When creating the program, we created sample output files in the tests folder for corresponding input files. The output in those output files should match the print output when running the program with the same input files.
 
@@ -41,3 +45,27 @@ does not increase the number of misses.
 This would mean that the optimal algorithm is now equal to Belady's farthest-in-the-future
 algorithm which is a contradiction to another algorithm being more optimal. Therefore, Belady’s
 algorithm is optimal and that its number of misses is no larger than that of A.
+
+## Test Files Overview
+These are the input files made to test different behaviors of LRU, FIFO, and OPTFF:
+
+- test1.txt
+This tests the minimum cache size (k=1). This will cause every change in page to cause a miss.
+
+- test2.txt
+This tests when all requests are identical. Only the first request here should cause a miss.
+
+- test3.txt
+This tests if a cache size is larger than the number of distinct pages. Here, no evictions will happen.
+
+- test4.txt
+This tests a perfect repeating cycle equal to cache size. After the first initial misses, all of the requests are hits.
+
+- test5.txt
+This tests the OPTFF function outperforming LRU and FIFO. OPTFF will make better decisions for pages to evict as it looks ahead.
+
+- test6.txt
+This tests if cache size is equal to working set size. After we get initial misses, all of the requests after are hits.
+
+- test7.txt
+This tests the OPTFF function when a page is never used again. This is meant to verify that pages are being evicted correctly with no use in the future.
