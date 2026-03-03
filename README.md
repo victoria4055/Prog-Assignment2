@@ -49,23 +49,23 @@ algorithm is optimal and that its number of misses is no larger than that of A.
 ## Test Files Overview
 These are the input files made to test different behaviors of LRU, FIFO, and OPTFF:
 
-- test1.txt
+**test1.txt**
 This tests the minimum cache size (k=1). This will cause every change in page to cause a miss.
 
-- test2.txt
+**test2.txt**
 This tests when all requests are identical. Only the first request here should cause a miss.
 
-- test3.txt
+**test3.txt**
 This tests if a cache size is larger than the number of distinct pages. Here, no evictions will happen.
 
-- test4.txt
+**test4.txt**
 This tests a perfect repeating cycle equal to cache size. After the first initial misses, all of the requests are hits.
 
-- test5.txt
+**test5.txt**
 This tests the OPTFF function outperforming LRU and FIFO. OPTFF will make better decisions for pages to evict as it looks ahead.
 
-- test6.txt
+**test6.txt**
 This tests if cache size is equal to working set size. After we get initial misses, all of the requests after are hits.
 
-- test7.txt
+**test7.txt**
 This tests the OPTFF function when a page is never used again. This is meant to verify that pages are being evicted correctly with no use in the future.
